@@ -1,116 +1,100 @@
-# 🤝 Contributing to JSQL-neo
+# Contributing to JSQL-neo
 
-Thank you for your interest in contributing to JSQL-neo! 🎉
+Thank you for your interest in contributing to JSQL-neo! This document provides guidelines and instructions for contributing.
 
-## 📋 Table of Contents
+## 🏗️ Project Overview
 
-- [Code of Conduct](#-code-of-conduct)
-- [Getting Started](#-getting-started)
-- [Development Setup](#-development-setup)
-- [Making Changes](#-making-changes)
-- [Pull Request Process](#-pull-request-process)
-- [Reporting Bugs](#-reporting-bugs)
-- [Suggesting Features](#-suggesting-features)
-
-## 📖 Code of Conduct
-
-Please be respectful and constructive in all interactions. We aim to foster an inclusive and welcoming community.
+JSQL-neo is a JavaScript SQL parser and executor library. Contributions are welcome from developers of all skill levels.
 
 ## 🚀 Getting Started
 
-1. **Fork the repository** on GitHub
-2. **Clone your fork** locally:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/JSQL-neo.git
-   cd JSQL-neo
-   ```
-3. **Add upstream remote**:
-   ```bash
-   git remote add upstream https://github.com/vexify-build/JSQL-neo.git
-   ```
+### Prerequisites
 
-## 🛠️ Development Setup
+- Node.js >= 16.x
+- npm >= 8.x
+
+### Setup
 
 ```bash
-# Install dependencies
+git clone https://github.com/vexify-build/JSQL-neo.git
+cd JSQL-neo
 npm install
+npm test
+```
 
-# Run in development mode
-npm run dev
+## 📐 Code Standards
 
+### Style Guide
+
+- **Formatting:** Use 2 spaces for indentation (no tabs)
+- **Semicolons:** Always end statements with semicolons
+- **Quotes:** Use single quotes for strings
+- **Line length:** Keep lines under 120 characters
+
+### Best Practices
+
+- Write self-documenting code with clear variable/function names
+- Add JSDoc comments for all public APIs
+- Keep functions small and focused (single responsibility)
+- Avoid deeply nested callbacks — prefer async/await
+
+## 📝 Commit Message Convention
+
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+<type>(<scope>): <subject>
+
+Types: feat | fix | docs | style | refactor | test | chore
+```
+
+Examples:
+```
+feat(parser): add support for HAVING clause
+fix(executor): handle NULL in JOIN conditions
+docs(readme): update installation instructions
+```
+
+## 🧪 Testing
+
+- All new features must include tests
+- All tests must pass before merging: `npm test`
+- Aim for meaningful test coverage, not just quantity
+
+```bash
 # Run tests
 npm test
 
-# Build for production
-npm run build
+# Run with coverage
+npm run test:coverage
 ```
 
-## 🔄 Making Changes
+## 🔧 Pull Request Process
 
-1. **Create a feature branch** from `main`:
+1. Fork the repository and create a feature branch:
    ```bash
-   git checkout -b feature/your-feature-name
-   # or
-   git checkout -b fix/your-bug-fix
+   git checkout -b feat/your-feature-name
    ```
 
-2. **Write clean, well-documented code** following existing patterns
+2. Make your changes and commit using conventional commits
 
-3. **Add tests** for new features or bug fixes
-
-4. **Run tests** to ensure everything works:
+3. Push to your fork and open a Pull Request:
    ```bash
-   npm test
+   git push origin feat/your-feature-name
    ```
 
-5. **Commit your changes** with clear messages:
-   ```bash
-   git commit -m "feat: add new feature X"
-   git commit -m "fix: resolve issue with Y"
-   ```
+4. Ensure all CI checks pass
 
-## 📤 Pull Request Process
+5. Link related issues in your PR description
 
-1. **Keep your fork updated**:
-   ```bash
-   git fetch upstream
-   git rebase upstream/main
-   ```
+## 🐛 Reporting Issues
 
-2. **Push your branch**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-3. **Open a Pull Request** on GitHub:
-   - Fill in the PR template
-   - Reference any related issues (`Fixes #123`)
-   - Ensure CI passes
-
-4. **Code review** will be conducted; address feedback promptly
-
-## 🐛 Reporting Bugs
-
-Please report bugs via [GitHub Issues](https://github.com/vexify-build/JSQL-neo/issues) with:
-
-- Clear title and description
-- Steps to reproduce
+When reporting bugs, please include:
+- Node.js and npm versions
+- Minimal reproducible example
 - Expected vs actual behavior
-- Environment details (OS, Node version, etc.)
-- Logs or screenshots if applicable
+- Error messages and stack traces
 
-## 💡 Suggesting Features
-
-We welcome feature suggestions! Open an issue with:
-
-- Clear description of the feature
-- Use case / motivation
-- Potential implementation ideas (optional)
-
-## 📝 License
+## 📄 License
 
 By contributing, you agree that your contributions will be licensed under the MIT License.
-
----
-
-**Happy coding!** 🚀
